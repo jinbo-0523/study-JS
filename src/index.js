@@ -81,25 +81,38 @@
 // console.log(func3(10, 20));
 // // 旧式とアロー関数ではthisの扱いが違うので注意
 
-// 分割代入
-const myProfile = {
-  name: "mitumasa",
-  age: 32
-};
+// // 分割代入
+// const myProfile = {
+//   name: "mitumasa",
+//   age: 32
+// };
 
-const massage1 = `私の名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
-console.log(massage1);
+// const massage1 = `私の名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
+// console.log(massage1);
 
-// 分割代入を使って書き換える
-const { name, age } = myProfile;
-const massage2 = `私の名前は${name}です。年齢は${age}です。`;
-console.log(massage2);
+// // 分割代入を使って書き換える
+// const { name, age } = myProfile;
+// const massage2 = `私の名前は${name}です。年齢は${age}です。`;
+// console.log(massage2);
 
-// 配列にも分割代入使用可能
-const myProfile2 = ["mitumasa", 32];
-const massage3 = `僕の名前は${myProfile2[0]}です。歳は${myProfile2[1]}歳です。`;
-console.log(massage3);
+// // 配列にも分割代入使用可能
+// const myProfile2 = ["mitumasa", 32];
+// const massage3 = `僕の名前は${myProfile2[0]}です。歳は${myProfile2[1]}歳です。`;
+// console.log(massage3);
 
-const [namae, nennrei] = myProfile2;
-const massage４ = `私の名前は${namae}だよ。年齢は${nennrei}歳になります。`;
-console.log(massage４);
+// const [namae, nennrei] = myProfile2;
+// const massage４ = `私の名前は${namae}だよ。年齢は${nennrei}歳になります。`;
+// console.log(massage４);
+
+// デフォルト値、引数
+const sayHallo = (name) => console.log(`こんにちは、${name}さん！！`);
+sayHallo("mitumasa");
+// こんにちは、mitumasaさん！！
+sayHallo();
+// こんにちは、undefinedさん！！になってしまう
+
+// デフォルトでゲストさん！！になるように設定する
+const sayHallo2 = (name = "ゲスト") =>
+  console.log(`こんにちは、${name}さん！！`);
+sayHallo2();
+// こんにちは、ゲストさん！！になる
