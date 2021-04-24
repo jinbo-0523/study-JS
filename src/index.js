@@ -45,3 +45,15 @@ val5[0] = "bird";
 
 val5.push("monkey");
 console.log(val5);
+
+// テンプレート文字列
+const name = "光将";
+const age = 32;
+// 私の名前は光将です。年齢は３２歳です。と表示したい
+// 従来
+const massage１ = "私の名前は" + name + "です。年齢は" + age + "です";
+console.log(massage１);
+
+// テンプレート文字列を使うと
+const massage2 = ` 私の名前は${name}です。年齢は${age}です `;
+console.log(massage１);
