@@ -28,32 +28,55 @@
 // const変数は上書き不可
 // val3 = "const変数を上書き"
 
-// constで定義したオブジェクトはプロパティの変更が可能
-const val4 = {
-  name: "じんぼ",
-  age: 28
-};
-val4.name = "jinbo";
-val4.address = "東京";
-console.log(val4);
-// オブジェクトのものはconst変数でも変更可能
+// // constで定義したオブジェクトはプロパティの変更が可能
+// const val4 = {
+//   name: "じんぼ",
+//   age: 28
+// };
+// val4.name = "jinbo";
+// val4.address = "東京";
+// console.log(val4);
+// // オブジェクトのものはconst変数でも変更可能
 
-// constで定義した配列はプロパティの変更が可能
-const val5 = ["dog", "cat"];
-// 配列に書き換え処理可能
-val5[0] = "bird";
+// // constで定義した配列はプロパティの変更が可能
+// const val5 = ["dog", "cat"];
+// // 配列に書き換え処理可能
+// val5[0] = "bird";
 
-val5.push("monkey");
-console.log(val5);
+// val5.push("monkey");
+// console.log(val5);
 
-// テンプレート文字列
-const name = "光将";
-const age = 32;
-// 私の名前は光将です。年齢は３２歳です。と表示したい
+// // テンプレート文字列
+// const name = "光将";
+// const age = 32;
+// // 私の名前は光将です。年齢は３２歳です。と表示したい
+// // 従来
+// const massage１ = "私の名前は" + name + "です。年齢は" + age + "です";
+// console.log(massage１);
+
+// // テンプレート文字列を使うと
+// const massage2 = ` 私の名前は${name}です。年齢は${age}です `;
+// console.log(massage１);
+
+// アロー関数
 // 従来
-const massage１ = "私の名前は" + name + "です。年齢は" + age + "です";
-console.log(massage１);
+// function func1(str) {
+//   return str
+// }
+// 変数定義をしてから関数を表示させる
+const func1 = function (str) {
+  return str;
+};
+console.log(func1("fun1(従来関数)です"));
 
-// テンプレート文字列を使うと
-const massage2 = ` 私の名前は${name}です。年齢は${age}です `;
-console.log(massage１);
+// アロー関数
+const func2 = (str) => {
+  return str;
+};
+console.log(func2("func2です"));
+
+const func3 = (num1, num2) => {
+  return num1 + num2;
+};
+console.log(func3(10, 20));
+// 旧式とアロー関数ではthisの扱いが違うので注意
