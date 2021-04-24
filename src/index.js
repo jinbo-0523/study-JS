@@ -58,25 +58,48 @@
 // const massage2 = ` 私の名前は${name}です。年齢は${age}です `;
 // console.log(massage１);
 
-// アロー関数
-// 従来
-// function func1(str) {
-//   return str
-// }
-// 変数定義をしてから関数を表示させる
-const func1 = function (str) {
-  return str;
-};
-console.log(func1("fun1(従来関数)です"));
+// // アロー関数
+// // 従来
+// // function func1(str) {
+// //   return str
+// // }
+// // 変数定義をしてから関数を表示させる
+// const func1 = function (str) {
+//   return str;
+// };
+// console.log(func1("fun1(従来関数)です"));
 
-// アロー関数
-const func2 = (str) => {
-  return str;
-};
-console.log(func2("func2です"));
+// // アロー関数
+// const func2 = (str) => {
+//   return str;
+// };
+// console.log(func2("func2です"));
 
-const func3 = (num1, num2) => {
-  return num1 + num2;
+// const func3 = (num1, num2) => {
+//   return num1 + num2;
+// };
+// console.log(func3(10, 20));
+// // 旧式とアロー関数ではthisの扱いが違うので注意
+
+// 分割代入
+const myProfile = {
+  name: "mitumasa",
+  age: 32
 };
-console.log(func3(10, 20));
-// 旧式とアロー関数ではthisの扱いが違うので注意
+
+const massage1 = `私の名前は${myProfile.name}です。年齢は${myProfile.age}です。`;
+console.log(massage1);
+
+// 分割代入を使って書き換える
+const { name, age } = myProfile;
+const massage2 = `私の名前は${name}です。年齢は${age}です。`;
+console.log(massage2);
+
+// 配列にも分割代入使用可能
+const myProfile2 = ["mitumasa", 32];
+const massage3 = `僕の名前は${myProfile2[0]}です。歳は${myProfile2[1]}歳です。`;
+console.log(massage3);
+
+const [namae, nennrei] = myProfile2;
+const massage４ = `私の名前は${namae}だよ。年齢は${nennrei}歳になります。`;
+console.log(massage４);
