@@ -176,15 +176,15 @@
 // ループ処理と新しい配列の生成に使われる
 
 // 自分の名前以外には「さん」をつけるようにする
-const nameArr = ["田中", "山田", "神保"];
-const newNameArr = nameArr.map((name) => {
-  if (name === "神保") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
+// const nameArr = ["田中", "山田", "神保"];
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "神保") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
 // filtterの使用
 // 条件に一致したものを返却して、新しい配列を生成する関数
 // const numArr3 = [1, 2, 3, 4, 5];
@@ -192,3 +192,26 @@ console.log(newNameArr);
 //   return num% 2 === 1;
 // });
 // console.log(newNumArr)
+
+// 三項演算子について
+// JSの追加要素ではないが頻出
+// ある条件 ？ 条件がtrueの時 : 条件がfalseの時
+// const val1 = 1>0 ? "trueです"　:　"falseです";
+// console.log(val1);
+
+const num = "1300";
+console.log(num.toLocaleString());
+// toLocaleString とは1,300のように３
+// 桁区切りにカンマがを入れられる関数。
+// 文字列には反応しないので三項演算子を使って
+// 数値の場合は３桁区切り、文字列の場合には「文字列を入力してください」と表示せるようにする
+const formattedNum =
+  typeof num === "number" ? num.toLocaleString() : "数値を入力してください";
+// typeofとは型を判別してくれる
+console.log(formattedNum);
+
+// 値の合計が100以下かどうかをチェックする関数checkSumを作成するとする
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? "１００を超えています" : "許容範囲内です";
+};
+console.log(checkSum(50, 60));
