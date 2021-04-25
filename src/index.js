@@ -104,15 +104,56 @@
 // const massage４ = `私の名前は${namae}だよ。年齢は${nennrei}歳になります。`;
 // console.log(massage４);
 
-// デフォルト値、引数
-const sayHallo = (name) => console.log(`こんにちは、${name}さん！！`);
-sayHallo("mitumasa");
-// こんにちは、mitumasaさん！！
-sayHallo();
-// こんにちは、undefinedさん！！になってしまう
+// // デフォルト値、引数
+// const sayHallo = (name) => console.log(`こんにちは、${name}さん！！`);
+// sayHallo("mitumasa");
+// // こんにちは、mitumasaさん！！
+// sayHallo();
+// // こんにちは、undefinedさん！！になってしまう
 
-// デフォルトでゲストさん！！になるように設定する
-const sayHallo2 = (name = "ゲスト") =>
-  console.log(`こんにちは、${name}さん！！`);
-sayHallo2();
-// こんにちは、ゲストさん！！になる
+// // デフォルトでゲストさん！！になるように設定する
+// const sayHallo2 = (name = "ゲスト") =>
+//   console.log(`こんにちは、${name}さん！！`);
+// sayHallo2();
+// // こんにちは、ゲストさん！！になる
+
+// スプレット構文
+// 配列の展開
+// ...を先頭に入れる
+const arr1 = [1, 2];
+console.log(arr1);
+console.log(...arr1);
+
+const sumFunc = (num1, num2) => console.log(num1 + num2);
+sumFunc(arr1[0], arr1[1]);
+sumFunc(...arr1);
+
+// 展開の反対 => まとめる
+const arr2 = [1, 2, 3, 4, 5];
+const [num1, num2, ...arr3] = arr2;
+console.log(num1);
+console.log(num2);
+// 345がarr3に入れられる
+console.log(arr3);
+
+// 配列のコピー、結合
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+
+// コピー
+const arr6 = [...arr4];
+arr6[0] = 100;
+console.log(arr6);
+console.log(arr4);
+
+// 結合
+const arr7 = [...arr4, ...arr5];
+console.log(arr7);
+
+// 参照が引き継がれてしまう。元の配列が影響を受けてしまう
+// const arr8 = arr4;
+// arr8[0] = 100;
+// console.log(arr4);
+// const arr4 = [10,20];だったのに
+// [100, 20]になってしまう
+// なので配列のコピーは基本スプレット構文を使う
