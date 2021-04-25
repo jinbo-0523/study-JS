@@ -117,38 +117,38 @@
 // sayHallo2();
 // // こんにちは、ゲストさん！！になる
 
-// スプレット構文
-// 配列の展開
-// ...を先頭に入れる
-const arr1 = [1, 2];
-console.log(arr1);
-console.log(...arr1);
+// // スプレット構文
+// // 配列の展開
+// // ...を先頭に入れる
+// const arr1 = [1, 2];
+// console.log(arr1);
+// console.log(...arr1);
 
-const sumFunc = (num1, num2) => console.log(num1 + num2);
-sumFunc(arr1[0], arr1[1]);
-sumFunc(...arr1);
+// const sumFunc = (num1, num2) => console.log(num1 + num2);
+// sumFunc(arr1[0], arr1[1]);
+// sumFunc(...arr1);
 
-// 展開の反対 => まとめる
-const arr2 = [1, 2, 3, 4, 5];
-const [num1, num2, ...arr3] = arr2;
-console.log(num1);
-console.log(num2);
-// 345がarr3に入れられる
-console.log(arr3);
+// // 展開の反対 => まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// // 345がarr3に入れられる
+// console.log(arr3);
 
-// 配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// // 配列のコピー、結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-// コピー
-const arr6 = [...arr4];
-arr6[0] = 100;
-console.log(arr6);
-console.log(arr4);
+// // コピー
+// const arr6 = [...arr4];
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4);
 
-// 結合
-const arr7 = [...arr4, ...arr5];
-console.log(arr7);
+// // 結合
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
 
 // 参照が引き継がれてしまう。元の配列が影響を受けてしまう
 // const arr8 = arr4;
@@ -157,3 +157,38 @@ console.log(arr7);
 // const arr4 = [10,20];だったのに
 // [100, 20]になってしまう
 // なので配列のコピーは基本スプレット構文を使う
+
+// mapとfilterを使用して配列の処理
+// const nameArr = ["田中", "山田", "神保"];
+// 従来（for文）
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index +　1 }番目は${nameArr[index]}です`);
+// }
+
+// map使用
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+
+// nameArr.map((name) => console.log(name));
+// nameArr.map((name, index) => console.log(`${index+1}番目は${name}です`));
+// ループ処理と新しい配列の生成に使われる
+
+// 自分の名前以外には「さん」をつけるようにする
+const nameArr = ["田中", "山田", "神保"];
+const newNameArr = nameArr.map((name) => {
+  if (name === "神保") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
+// filtterの使用
+// 条件に一致したものを返却して、新しい配列を生成する関数
+// const numArr3 = [1, 2, 3, 4, 5];
+// const newNumArr = numArr3.filter((num) => {
+//   return num% 2 === 1;
+// });
+// console.log(newNumArr)
